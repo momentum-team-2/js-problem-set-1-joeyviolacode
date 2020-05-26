@@ -13,7 +13,7 @@ let leftover = candies % people
 // where <name> is the name given as an argument to the function.
 
 function greeting(name) {
-    return "Hello, " + name + "!";
+    return "Hello, " + name + "!"
 }
 
 // 4. Create a function called isOdd that, given a number, will
@@ -21,7 +21,7 @@ function greeting(name) {
 // number which, when divided by 2, has a remainder of 1 or -1.
 
 function isOdd(num) {
-    return num % 2 == 1 || num % 2 == -1;
+    return num % 2 == 1 || num % 2 == -1
 }
 
 // 5. Create a function called isEven that, given a number, will
@@ -29,7 +29,7 @@ function isOdd(num) {
 // number which, when divided by 2, has a remainder of 0.
 
 function isEven(num) {
-    return num % 2 == 0;
+    return num % 2 == 0
 }
 
 // 6. Create a function called fahrenheitToCelsius that takes a
@@ -37,7 +37,7 @@ function isEven(num) {
 // temperature in Celsius.
 
 function fahrenheitToCelsius(tempF) {
-    return (tempF - 32) * 5 / 9;
+    return (tempF - 32) * 5 / 9
 }
 
 // 6. Create a function called celsiusToFahrenheit that takes a
@@ -45,7 +45,7 @@ function fahrenheitToCelsius(tempF) {
 // temperature in Fahrenheit.
 
 function celsiusToFahrenheit(tempC) {
-    return (tempC * 9 / 5) + 32;
+    return (tempC * 9 / 5) + 32
 }
 
 // 7. Create a function called fahrenheitToKelvin that takes a
@@ -56,7 +56,7 @@ function celsiusToFahrenheit(tempC) {
 // 1 degree Kelvin equals 1 degree Celsius.
 
 function fahrenheitToKelvin(tempF) {
-    return fahrenheitToCelsius(tempF) + 273.15;
+    return fahrenheitToCelsius(tempF) + 273.15
 }
 
 // 8. Create a function called lesser that takes two numbers as
@@ -65,9 +65,9 @@ function fahrenheitToKelvin(tempF) {
 
 function lesser(a, b) {
     if (a < b) {
-        return a;
+        return a
     } else {
-        return b;
+        return b
     }
 }
 
@@ -85,13 +85,13 @@ function lesser(a, b) {
 
 function multigreeting(name, lang) {
     if (lang === "en") {
-        return "Hello, " + name + "!";
+        return "Hello, " + name + "!"
     } else if (lang === "es") {
-        return "¡Hola, " + name + "!";
+        return "¡Hola, " + name + "!"
     } else if (lang === "fr") {
-        return "Bonjour, " + name + "!";
+        return "Bonjour, " + name + "!"
     } else if (lang === "eo") {
-        return "Saluton, " + name + "!";
+        return "Saluton, " + name + "!"
     }
 }
 
@@ -123,23 +123,23 @@ function multigreeting(name, lang) {
 // divisor using the instructions above.
 
 function gcd(a, b) {
-    let d = 0;
+    let d = 0
     while (a % 2 === 0 && b % 2 === 0) {
-        a = a / 2;
-        b = b / 2;
-        d = d + 1;
+        a = a / 2
+        b = b / 2
+        d = d + 1
     }
     while (a != b) {
         if (a % 2 == 0) {
-            a = a / 2;
+            a = a / 2
         } else if (b % 2 == 0) {
-            b = b / 2;
+            b = b / 2
         } else if (a > b) {
-            a = (a - b) / 2;
+            a = (a - b) / 2
         } else {
-            b = (b - a) / 2;
+            b = (b - a) / 2
         }
     }
-    let g = a;
-    return g * (2 ** d);
+    let g = a
+    return g * (2 ** d)
 }
