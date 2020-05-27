@@ -21,7 +21,7 @@ function greeting(name) {
 // number which, when divided by 2, has a remainder of 1 or -1.
 
 function isOdd(num) {
-    return num % 2 == 1 || num % 2 == -1
+    return Math.abs(num % 2) === 1
 }
 
 // 5. Create a function called isEven that, given a number, will
@@ -64,11 +64,7 @@ function fahrenheitToKelvin(tempF) {
 // use an if/else statement.
 
 function lesser(a, b) {
-    if (a < b) {
-        return a
-    } else {
-        return b
-    }
+    return Math.min(a, b)
 }
 
 // 9. Create a function called multigreeting that takes a name
@@ -124,22 +120,37 @@ function multigreeting(name, lang) {
 
 function gcd(a, b) {
     let d = 0
-    while (a % 2 === 0 && b % 2 === 0) {
-        a = a / 2
-        b = b / 2
-        d = d + 1
+    while (isEven(a) && isEven(b)) {
+        a /= 2
+        b /= 2
+        d += 1
     }
     while (a != b) {
-        if (a % 2 == 0) {
-            a = a / 2
-        } else if (b % 2 == 0) {
-            b = b / 2
-        } else if (a > b) {
-            a = (a - b) / 2
-        } else {
-            b = (b - a) / 2
-        }
+        isEven(a) ? a /= 2 :
+        isEven(b) ? b /= 2 :
+        a > b     ? a = (a - b) / 2 :
+                    b = (b - a) / 2
     }
     let g = a
     return g * (2 ** d)
 }
+
+/*function gcd(a, b) {
+    let d = 0
+    while (isEven(a) && isEven(b)) {
+        a /= 2
+        b /= 2
+        d += 1
+    }
+    if (isEven(a)) {
+        a /= 2
+    } else if (isEven(b)) {
+        b /= 2
+    } else if (a > b) {
+        a = (a - b) / 2
+    } else {
+        b = (b - a) / 2
+    }
+    let g = a
+    return g * (2 ** d)
+}*/
